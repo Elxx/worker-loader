@@ -11,7 +11,7 @@ module.exports = function(content, url) {
 				blob.append(content);
 				blob = blob.getBlob();
 			} catch(e) { // The proposed API
-				blob = new Blob([content]);
+				blob = new Blob([content], { type: 'application/javascript' });
 			}
 			return new Worker(URL.createObjectURL(blob));
 		} catch(e) {
